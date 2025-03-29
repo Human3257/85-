@@ -3,8 +3,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
-from config import BOT_TOKEN
-
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
