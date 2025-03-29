@@ -5,7 +5,6 @@ from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from config import BOT_TOKEN
 
-BOT_TOKEN = "7413293356:AAH5CRiTlBRV8L7JTbxYDG4O5pfcH6Hl5-0"
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
