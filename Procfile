@@ -1,1 +1,1 @@
-worker: Python 85.py
+worker: python 85.py
