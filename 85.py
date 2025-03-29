@@ -17,7 +17,7 @@ async def start(message: Message):
 async def handle_number(message: Message):
     try:
         number = float(message.text)
-        result = number * 100 / 85
+        result = number * 100 / 88
         await message.answer(f"Результат: {result}")
     except ValueError:
         await message.answer("Число не корректное")
