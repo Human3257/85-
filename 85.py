@@ -16,12 +16,12 @@ user_mode = {}
 @dp.message(CommandStart())
 async def start(message: Message):
     kb = InlineKeyboardBuilder()
-    kb.button(text="Высчитать 88", callback_data="calc_88")
-    kb.button(text="Высчитать / 2", callback_data="calc_half")
+    kb.button(text="Высчитать 70% и 30%", callback_data="calc_7030")
+    kb.button(text="Высчитать 50%", callback_data="calc_50")
     kb.adjust(1)
     await message.answer("Выберите действие:", reply_markup=kb.as_markup())
 
-@dp.callback_query(F.data.in_(["calc_88", "calc_half"]))
+@dp.callback_query(F.data.in_(["calc_7030", "calc_50"]))
 async def handle_menu(callback: CallbackQuery):
     user_id = callback.from_user.id
     user_mode[user_id] = callback.data
@@ -38,7 +38,7 @@ async def handle_number(message: Message):
     try:
         number = float(message.text)
         mode = user_mode[user_id]
-        if mode == "calc_88":
+        if mode == "calc_7030":
             step1 = number * 88 / 100
             step2 = step1 / 30 * 100
             result = step1 / 70 * 100
@@ -49,7 +49,7 @@ async def handle_number(message: Message):
                 f"70% от {step1} = {result}\n"
                 f"Результат: {result1}"
             )
-        elif mode == "calc_half":
+        elif mode == "calc_50":
             step1 = number * 88 / 100
             result = step1 / 2
             text = (
