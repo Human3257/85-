@@ -39,7 +39,15 @@ async def handle_number(message: Message):
         number = float(message.text)
         mode = user_mode[user_id]
         if mode == "calc_88":
-            result = number * 100 / 88
+            step1 = number * 88 / 100
+            step2 = step1 / 30 * 100
+            result = step1 / 70 * 100
+            result1 = result + step2
+            text = (
+                f"{number} - 12% = {step1}\n"
+                f"30% от {step1}  = {step2}\n"
+                f"70% от {step1} = {result}\n"
+                f"Результат: {result1}"
         elif mode == "calc_half":
             step1 = number * 88 / 100
             result = step1 / 2
