@@ -41,7 +41,14 @@ async def handle_number(message: Message):
         if mode == "calc_88":
             result = number * 100 / 88
         elif mode == "calc_half":
-            result = number * 88 / 100 / 2
+            step1 = number * 88 / 100
+            result = step1 / 2
+            text = (
+                f"{number} - 12% = {step1}\n"
+                f"{step1} / 2 = {result}\n"
+                f"Результат: {result}"
+            )
+            await message.answer(text)
         else:
             result = "Неизвестный режим"
         await message.answer(f"Результат: {result}")
