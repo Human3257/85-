@@ -48,6 +48,7 @@ async def handle_number(message: Message):
                 f"30% от {step1}  = {step2}\n"
                 f"70% от {step1} = {result}\n"
                 f"Результат: {result1}"
+            )
         elif mode == "calc_half":
             step1 = number * 88 / 100
             result = step1 / 2
