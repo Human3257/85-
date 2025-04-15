@@ -43,7 +43,7 @@ async def handle_number(message: Message):
             step1 = 12 / 112 * number
             result = step1
             text = (
-                f"{number:.4f} = {result}\n"
+                f"{number} = {result:.4f}\n"
             )
             await message.answer(text)
             
@@ -54,9 +54,8 @@ async def handle_number(message: Message):
             result1 = result + step2
             text = (
                 f"{number} - 12% = {step1}\n"
-                f"30% от {step1:.4f}  = {step2}\n"
-                f"70% от {step1:.4f} = {result}\n"
-                f"Результат: {result1:.4f}"
+                f"30% от {step1}  = {step2:.4f}\n"
+                f"70% от {step1} = {result:.4f}\n"
             )
             await message.answer(text)
             
@@ -64,8 +63,8 @@ async def handle_number(message: Message):
             step1 = number * 88 / 100
             result = step1 / 2
             text = (
-                f"{number:.4f} - 12% = {step1}\n"
-                f"{step1:.4f} / 2 = {result}\n"
+                f"{number} - 12% = {step1:.4f}\n"
+                f"{step1} / 2 = {result:.4f}\n"
                 f"Результат: {result:.4f}"
             )
             await message.answer(text)
