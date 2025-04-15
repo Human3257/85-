@@ -39,7 +39,7 @@ async def handle_number(message: Message):
     try:
         number = float(message.text)
         mode = user_mode[user_id]
-        if moded == "cals_nds":
+        if mode == "cals_nds":
             step1 = 12 / 112 * number
             result = step1
             text = (
