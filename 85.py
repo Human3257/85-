@@ -69,8 +69,7 @@ async def handle_number(message: Message):
             )
             await message.answer(text)
         else:
-            result = "Неизвестный режим"
-        await message.answer(f"Результат: {result}")
+            await message.answer("Вы ввели неизвестное число")
         
         del user_mode[user_id]
     except ValueError:
